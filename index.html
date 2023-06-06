@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core">
+</head>
+
+<body>
+    <video autoplay muted loop playsinline id="myVideo">
+        <source src="/video/sunny.mp4" type="video/mp4">
+    </video>
+    <div class="preloader" id="preloader">
+        <img class="preloader__image" src="./img/loading-spinner-svgrepo-com.svg" alt="">
+    </div>
+    <header>
+        <nav>
+            <input placeholder="Введите название города" type="text" id="input-id" value="Караганда"
+                onclick="clearInput()" />
+            <button id="input_submit" onclick="submit()">Найти</button>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h1 id="city"></h1>
+            <p class="temp" id="temp"> </p>
+            <p class="description" id="description"></p>
+            <p class="temp_max_min" id="temp_max_min"></p>
+        </article>
+        <div class="section_direction" class="item-group"
+            xyz="wide-5 thick-5 tall-5 small-5 perspective-5 origin-center duration delay-2 .5 ease-out-back stagger-4 direction">
+            <section class="square xyz-out">
+                <p>Восход солнца</p>
+                <p class="date" id="sunrise"></p>
+                <img src="./img/sunrise-up-svgrepo-com.svg" alt="" />
+            </section>
+            <section class="square xyz-out">
+                <p>Ветер м/c</p>
+                <p class="date" id="wind"></p>
+                <img src="./img/wind.png" alt="" />
+            </section>
+            <section class="square xyz-out">
+                <p>Ощущается</p>
+                <p class="date" id="feels_like"></p>
+                <img src="./img/temperature-feels-like-svgrepo-com 1.png" alt="" />
+            </section>
+            <section class="square xyz-out">
+                <p>Влажность</p>
+                <p class="date" id="humidity"></p>
+                <img src="./img/capl.png" alt="" />
+            </section>
+            <section class="square xyz-out">
+                <p>Видимость</p>
+                <p class="date" id="visibility"></p>
+                <img src="./img/visibility-svgrepo-com.svg" alt="" />
+            </section>
+            <section class="square xyz-out">
+                <p>Давление гПа</p>
+                <p class="date" id="grnd_level"> </p>
+                <img src="./img/SVGRepo_iconCarrier.png" alt="" />
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div>
+            <p>true weather</p>
+            <p>2023Ⓒ</p>
+        </div>
+    </footer>
+    <script src="api.js"></script>
+</body>
+
+</html>
